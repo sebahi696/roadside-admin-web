@@ -33,6 +33,37 @@
   <title>Roadside Staff</title>
   <link rel="manifest" href="manifest.json">
   <style>#nl-badge-frame{display:none!important}</style>
+  <script>
+    // New-order alert for the live board: a short chime (Web Audio, no file) and, when allowed,
+    // a system notification so a cashier on another tab or with the phone locked still notices.
+    window.rsNewOrders = function (n, title, body) {
+      try {
+        var C = window.AudioContext || window.webkitAudioContext;
+        if (C) {
+          var ctx = window.__rsAudio || (window.__rsAudio = new C());
+          if (ctx.state === 'suspended') ctx.resume();
+          [0, 0.18, 0.36].forEach(function (t, i) {
+            var o = ctx.createOscillator(), g = ctx.createGain();
+            o.type = 'sine'; o.frequency.value = [880, 1175, 1568][i];
+            g.gain.setValueAtTime(0.0001, ctx.currentTime + t);
+            g.gain.exponentialRampToValueAtTime(0.35, ctx.currentTime + t + 0.02);
+            g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + t + 0.16);
+            o.connect(g); g.connect(ctx.destination); o.start(ctx.currentTime + t); o.stop(ctx.currentTime + t + 0.18);
+          });
+        }
+      } catch (e) {}
+      try {
+        if ('Notification' in window && Notification.permission === 'granted' && document.visibilityState !== 'visible') {
+          new Notification(title, { body: body, icon: 'icons/Icon-192.png', tag: 'rs-new-order', renotify: true });
+        }
+      } catch (e) {}
+      try { if (navigator.vibrate) navigator.vibrate([200, 100, 200]); } catch (e) {}
+    };
+    window.rsAskNotify = function () {
+      try { if ('Notification' in window && Notification.permission === 'default') Notification.requestPermission(); } catch (e) {}
+      try { var C = window.AudioContext || window.webkitAudioContext; if (C && !window.__rsAudio) window.__rsAudio = new C(); } catch (e) {}
+    };
+  </script>
 </head>
 <body>
   <!--
