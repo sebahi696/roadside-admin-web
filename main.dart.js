@@ -35479,11 +35479,11 @@ if(p==="ar"){p=n==null?"":" - "+n.f.b
 o=b.as
 o=o!=null?" (\u0627\u0644\u0628\u0627\u0642\u064a \u0645\u0646 "+o+")":""
 q=b.f==="delivery"?"\u0627\u0644\u062a\u0648\u0635\u064a\u0644 \u0625\u0644\u0649: "+b.gJh():"\u0627\u0633\u062a\u0644\u0627\u0645 \u0645\u0646 \u0627\u0644\u0641\u0631\u0639"
-return"\u0645\u0631\u062d\u0628\u0627 "+b.r+"! \ud83d\udc4b \u0645\u0639\u0643 The Roadside"+p+".\n\u0648\u0635\u0644\u0646\u0627 \u0637\u0644\u0628\u0643 "+b.d+":\n"+s+"\n\u0627\u0644\u0645\u062c\u0645\u0648\u0639: "+r+" \u0646\u0642\u062f\u0627\u064b"+o+"\n"+q+'\n\u0631\u062f \u0628\u0640 "\u0646\u0639\u0645" \u0644\u062a\u0623\u0643\u064a\u062f \u0627\u0644\u0637\u0644\u0628 \ud83d\ude97'}p=n==null?"":" - "+n.f.a
+return"\u0645\u0631\u062d\u0628\u0627 "+b.r+"! \ud83d\udc4b \u0645\u0639\u0643 \u0631\u0648\u062f\u0633\u0627\u064a\u062f"+p+".\n\u0648\u0635\u0644\u0646\u0627 \u0637\u0644\u0628\u0643 "+b.d+":\n"+s+"\n\u0627\u0644\u0645\u062c\u0645\u0648\u0639: "+r+" \u0646\u0642\u062f\u0627\u064b"+o+"\n"+q+'\n\u0631\u062f \u0628\u0640 "\u0646\u0639\u0645" \u0644\u062a\u0623\u0643\u064a\u062f \u0627\u0644\u0637\u0644\u0628 \ud83d\ude97'}p=n==null?"":" - "+n.f.a
 o=b.as
 o=o!=null?" (change for "+o+")":""
 q=b.f==="delivery"?"Delivery to: "+b.gJh():"Pickup at the branch"
-return"Hi "+b.r+"! \ud83d\udc4b This is The Roadside"+p+".\nWe got your order "+b.d+":\n"+s+"\nTotal: "+r+" cash"+o+"\n"+q+"\nReply YES to confirm \ud83d\ude97"},
+return"Hi "+b.r+"! \ud83d\udc4b This is Roadside"+p+".\nWe got your order "+b.d+":\n"+s+"\nTotal: "+r+" cash"+o+"\n"+q+"\nReply YES to confirm \ud83d\ude97"},
 blA(a,b,c){var s,r,q,p,o,n,m,l,k,j,i,h,g=null,f=a.cw(t.u).f,e=f.y
 if(!f.dd("orders.manage"))return A.b([],t.p)
 s=new A.b4O(a,new A.qw(e),b,f,c)
@@ -136777,7 +136777,7 @@ s=h!==(g==null?0:g)&&h>0?7:8
 break
 case 7:o=p.c
 if(o==null){s=1
-break}if(h>14){q=A.eQ(o,"Minimum app build: the newest build we have shipped is 14. A higher number would lock every customer out.",!0)
+break}if(h>16){q=A.eQ(o,"Minimum app build: the newest build we have shipped is 16. A higher number would lock every customer out.",!0)
 s=1
 break}s=9
 return A.l(A.mf(o,"Force an update?","Every customer on a build lower than "+h+' will see an "update the app" screen and cannot order until they update. Continue?',!0,"Yes, force update"),$async$dv)
@@ -137951,7 +137951,7 @@ case 1:return A.u(q,r)}})
 return A.v($async$$0,r)},
 $S:163}
 A.ys.prototype={
-K(a){var s=null,r=this.c,q=new A.a40(r,new A.NM("assets/brand/wordmark-white.svg","roadside_core",s,s,s),"The Roadside",s,s)
+K(a){var s=null,r=this.c,q=new A.a40(r,new A.NM("assets/brand/wordmark-white.svg","roadside_core",s,s,s),"Roadside",s,s)
 if(!this.e)return q
 return A.Bi(q,new A.dw(s,s,s,s,A.b([new A.cf(0,B.am,B.t.pm(0.18),new A.m(0,r/45),r/18)],t.d),s,B.aU),B.f2)}}
 A.hq.prototype={
