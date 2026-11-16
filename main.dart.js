@@ -136777,7 +136777,7 @@ s=h!==(g==null?0:g)&&h>0?7:8
 break
 case 7:o=p.c
 if(o==null){s=1
-break}if(h>16){q=A.eQ(o,"Minimum app build: the newest build we have shipped is 16. A higher number would lock every customer out.",!0)
+break}if(h>18){q=A.eQ(o,"Minimum app build: the newest build we have shipped is 18. A higher number would lock every customer out.",!0)
 s=1
 break}s=9
 return A.l(A.mf(o,"Force an update?","Every customer on a build lower than "+h+' will see an "update the app" screen and cannot order until they update. Continue?',!0,"Yes, force update"),$async$dv)
